@@ -1,0 +1,2 @@
+class DBInstrumentError(Exception):
+    pass
