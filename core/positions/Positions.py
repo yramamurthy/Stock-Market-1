@@ -3,4 +3,6 @@ class Positions:
         pass
 
     def notify_update(self, instrument):
+        print("gotit in Positions :: ", instrument.instrument_token)
+
         pass

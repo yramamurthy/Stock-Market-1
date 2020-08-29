@@ -11,5 +11,6 @@ class RSI:
 
     # compulsory method
     def notify_update(self, instrument):
+        print("gotit in strategy")
         # data updated recheck for trigger
         pass

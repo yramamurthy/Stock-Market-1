@@ -11,7 +11,7 @@ class DB:
         self.db = mongo["StockMarket"]
 
     def get_application_config(self):
-        self.db["config"].find_one()
+        return self.db["config"].find_one()
 
     def update_token(self, user_id, access_token):
         self.db["config"].update_one({'user_id': user_id},

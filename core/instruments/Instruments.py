@@ -1,13 +1,15 @@
 from core.exception.InstrumentError import InstrumentError
-from core.kite.Instrument import Instrument
+from core.instruments.Instrument import Instrument
+from core.kite.Socket import Socket
 
 
 class Instruments:
 
-    def __init__(self, db, kite, positions):
+    def __init__(self, db, kite, positions, task_manager):
         self.db = db
         self.kite = kite
         self.positions = positions
+        self.socket = Socket(self.kite.socket_api, task_manager, self)
         self.instrument_list = []
 
     def get_instrument(self, instrument_token=None, instrument_symbol=None):
@@ -25,6 +27,7 @@ class Instruments:
         name = instrument_dict['name']
         instrument = Instrument(instrument_token, instrument_symbol, name, self.kite, self.positions)
         self.instrument_list.append(instrument)
+        self.socket.subscribe_stock(instrument_token)
         return instrument
 
     def refresh_instruments(self):
