@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>184</y>
+      <w>176</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>API
+--
+Members::
+-db: DB()
+-kite: Kite()
+-log: Log()
+-task_manager: TaskManager()
+-positions: Positions()
+--
+Methods::
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>112</x>
+      <y>88</y>
+      <w>24</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>16</y>
+      <w>128</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>DB
+--
+Members::
+-mongo_db: MongoDB
+--
+Methods::
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>288</x>
+      <y>416</y>
+      <w>112</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>TaskManager
+--
+Members::
+-TODO
+--
+Methods::
+-TODO
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>128</y>
+      <w>136</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Kite
+--
+Members::
+-data_api: KiteConnect
+-socket_api: KiteTicker
+--
+Methods::
+-update_token()
+-get_last_token_time()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>16</y>
+      <w>112</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Log
+--
+Members::
+-
+--
+Methods::
+-print()
+-get_logs()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>424</x>
+      <y>296</y>
+      <w>144</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Instruments
+--
+Members::
+-instrument_list = []
+--
+Methods::
+-get_instrument()
+-search_instrument()
+-refresh_instruments()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>368</y>
+      <w>152</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>Instrument
+--
+Members::
+-instrument_token: int
+-instrument_symbol: str
+-instrument_name: str
+-intraday_data = []
+--
+Methods::
+-buy()
+-sell()
+-update_intraday_data()
+-get_historical_data()
+-get_dataframe()
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>472</y>
+      <w>128</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Positions
+--
+Members::
+-in_progress_orders = []
+-completed_orders = []
+--
+Methods::
+-place_order()
+-exit_order()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>208</x>
+      <y>168</y>
+      <w>240</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+[db,log]</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>392</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>208</x>
+      <y>344</y>
+      <w>96</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>208</x>
+      <y>80</y>
+      <w>88</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>208</x>
+      <y>304</y>
+      <w>232</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+[db,log,kite]</panel_attributes>
+    <additional_attributes>270.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>376</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+[kite]</panel_attributes>
+    <additional_attributes>120.0;30.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>0</y>
+      <w>112</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>TokenGenerator
+--
+Members::
+-config_data
+--
+Methods::
+-auth_login()
+-auth_two_fa()
+-generate_token()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>184</y>
+      <w>112</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Socket
+--
+Members::
+-socket_api
+--
+Methods::
+-on_ticks()
+-on_connect()
+-on_close()
+-subscribe_stock()
+-unsubscribe_stock()
+-start()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>72</y>
+      <w>104</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+[db]</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>248</y>
+      <w>112</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+[socket_api]</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>688</y>
+      <w>136</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Time
+--
+Members::
+--
+Methods::
+-today()
+-day_before_today(days)
+-day_after_today(days)
+-format_with_time
+-format_without_time()
+-convert_from_str()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
